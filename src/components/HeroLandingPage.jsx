@@ -1,5 +1,6 @@
 import React from 'react';
 import video from '../assets/images/output.mp4';
+import { Link } from 'react-router-dom';
 
 
 const ChevronDownIcon = () => (
@@ -34,8 +35,8 @@ function HeroLandingPage() {
                         <a href="#" className="hover:text-black">Pricing</a>
                     </nav>
                     <div className="flex items-center gap-4">
-                        <a href="/login" className="hidden sm:block text-gray-700 hover:text-black font-medium">Login</a>
-                        <a href="/signup" className="bg-black text-white font-medium py-2 px-5 rounded-full hover:bg-gray-800">Register</a>
+                        <Link to="/login" className="hidden sm:block text-gray-700 hover:text-black font-medium">Login</Link>
+                        <Link to="/signup" className="bg-black text-white font-medium py-2 px-5 rounded-full hover:bg-gray-800">Register</Link>
                     </div>
                 </header>
 

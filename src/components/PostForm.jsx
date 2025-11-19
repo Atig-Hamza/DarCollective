@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FcGoogle } from 'react-icons/fc';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+import { Link } from "react-router-dom";
 
 function PostForm({ signup }) {
     const [showPassword, setShowPassword] = useState(false);
@@ -117,14 +118,14 @@ function PostForm({ signup }) {
             <p className="mt-12 text-center text-sm text-gray-600">
                 {signup
                     ? <>Already have an account?{' '}
-                        <a href="/login" className="font-medium text-blue-600 hover:text-blue-500">
+                        <Link to="/login" className="font-medium text-blue-600 hover:text-blue-500">
                             Sign in
-                        </a>
+                        </Link>
                     </>
                     : <>Don't have an account?{' '}
-                        <a href="/signup" className="font-medium text-blue-600 hover:text-blue-500">
+                        <Link to="/signup" className="font-medium text-blue-600 hover:text-blue-500">
                             Sign up
-                        </a>
+                        </Link>
                     </>
                 }
             </p>
