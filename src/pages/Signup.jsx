@@ -1,6 +1,6 @@
-import React from "react";
 import video from '../assets/images/output.mp4'
-import PostForm from '../components/PostForm.jsx';
+import SignupForm from '../components/signupForm.jsx';
+
 
 
 const Signup = () => {
@@ -32,7 +32,7 @@ const Signup = () => {
             </p>
           </div>
         </div>
-        <PostForm signup/>
+        <SignupForm />
       </div>
     </div>
   );
