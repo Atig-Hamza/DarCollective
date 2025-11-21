@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
-import { FcGoogle } from 'react-icons/fc';
-import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import video from '../assets/images/output.mp4'
-import PostForm from '../components/PostForm.jsx';
+import LoginForm from '../components/loginForm.jsx';
 
 
 const Login = () => {
@@ -34,7 +31,7 @@ const Login = () => {
             </p>
           </div>
         </div>
-        <PostForm />
+        <LoginForm />
       </div>
     </div>
   );
