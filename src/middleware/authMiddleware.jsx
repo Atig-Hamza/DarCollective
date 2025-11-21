@@ -1,10 +1,10 @@
-import React, { use, useEffect } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export default function AuthMiddleware({children}) {
     const navigate = useNavigate();
-    let content = null
+    const [isValid, setIsValid] = useState(false);
     useEffect(() => {
         async function validateToken() {
             const token = localStorage.getItem('token');
@@ -18,7 +18,9 @@ export default function AuthMiddleware({children}) {
                     token
                 });
                 console.log('Token validation response:', response.data);
-                content = children;
+                console.log('children:', children);
+                setIsValid(true);
+                console.log('Content set to children:', children);
             } catch (error) {
                 console.error('Token validation error:', error);
                 navigate('/login');
@@ -26,7 +28,10 @@ export default function AuthMiddleware({children}) {
         };
         validateToken()
     }, []);
+    if(!isValid){
+        return null;
+    }
     return (
-        <>{null}</>
+        <>{children}</>
     )
 }
