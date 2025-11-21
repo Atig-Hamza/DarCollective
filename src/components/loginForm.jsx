@@ -2,7 +2,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { AiOutlineEye as Eye, AiOutlineEyeInvisible as EyeOff } from 'react-icons/ai';
 import React, { useState } from "react";
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function LoginForm() {
     const [showPassword, setShowPassword] = useState(false);
@@ -10,6 +10,7 @@ function LoginForm() {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -23,7 +24,8 @@ function LoginForm() {
             });
             console.log(response);
             localStorage.setItem('token', response.data.token);
-            setSuccess('Signup successful! You can now log in.');
+            setSuccess('Login successful!');
+            navigate('/dashboard');
             setEmail('');
             setPassword(''); setError(response.data.message || 'Signup failed. Please try again.');
         } catch (err) {
