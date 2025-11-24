@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const userInfo = async () => {
 }
@@ -20,9 +21,9 @@ const Dashboard = () => {
             <SettingsIcon className="w-4 h-4" />
             <span>Settings</span>
           </button>
-          <button className="w-10 h-10 bg-white/50 rounded-full flex items-center justify-center hover:bg-white transition text-gray-500">
+          <Link to="/profile" className="w-10 h-10 bg-white/50 rounded-full flex items-center justify-center hover:bg-white transition text-gray-500">
             <UserIcon className="w-4 h-4" />
-          </button>
+          </Link>
         </div>
       </nav>
 
@@ -38,7 +39,6 @@ const Dashboard = () => {
             Select a workspace to continue
           </p>
         </div>
-
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
 
