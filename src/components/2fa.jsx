@@ -3,7 +3,7 @@ import React from 'react'
 function TwoFA() {
     return (
         <div className="group relative rounded-[2.5rem] bg-white p-8 md:p-10 transition-all duration-500 hover:shadow-xl border border-transparent hover:border-gray-200">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6 relative">
                 <div className="flex items-center gap-6">
                     <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-colors bg-gray-100 text-gray-500`}>
                         <LockIcon className="w-7 h-7" />
