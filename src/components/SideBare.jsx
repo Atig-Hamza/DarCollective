@@ -129,6 +129,7 @@ function SideBar() {
                 <div className="flex-1 flex flex-col gap-2 w-full px-4">
                     <SidebarIcon icon={<LayoutGrid />} active label="Dashboard" />
                     <SidebarIcon icon={<MessageCircle />} label="Messages" />
+                    <SidebarIcon icon={<Users />} label="Groups" />
                     <SidebarIcon icon={<CircleUserRound />} label="Profile" />
                 </div>
 
@@ -161,25 +162,20 @@ function SideBar() {
 
                     <NavSection title="Groupes & Tontines">
                         <NavItem 
-                            label="Access Groups" 
-                            icon={<Wallet />} 
-                            collapsible
-                        >
-                            <NavItem label="My Tontines" nested />
-                            <NavItem label="Public Groups" nested />
-                            <NavItem label="Invitations" nested badge="2" />
-                            <NavItem label="Reliability" nested />
-                        </NavItem>
-                        
-                        <NavItem 
-                            label="Manage" 
+                            label="Manage Groups" 
                             icon={<Settings />} 
                             collapsible
                         >
-                            <NavItem label="Create New" nested />
-                            <NavItem label="My Created" nested />
-                            <NavItem label="Members Turn" nested />
-                            <NavItem label="Reports" nested />
+                            <NavItem label="My Groups" href="/groups" nested />
+                            <NavItem label="Create Group" href="/groups/create" nested />
+                        </NavItem>
+
+                        <NavItem 
+                            label="Discover" 
+                            icon={<Wallet />} 
+                            collapsible
+                        >
+                            <NavItem label="Join Groups" href="/groups/join" nested />
                         </NavItem>
                     </NavSection>
 
