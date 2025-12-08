@@ -1,10 +1,36 @@
+import axios from 'axios';
 import { User } from 'lucide-react';
-import React from 'react'
+import React, { useEffect } from 'react'
+
+async function getUserData() {
+    try {
+        const token = localStorage.getItem('token');
+        const response = await axios.get('http://localhost:5000/api/v1/auth/info', {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        return response.data.user;
+
+    } catch (error) {
+        console.error('Error fetching user data:', error);
+        return null;
+    }
+}
+
 
 const Picture = () => {
+    useEffect(() => {
+        async function fetchUserData() {
+            const user = await getUserData();
+            console.log(user);
+        }
+        fetchUserData();
+    }, []);
     return (
         <div className="group relative rounded-[2.5rem] bg-[#2A2B2E] p-8 md:p-12 transition-all duration-500 hover:shadow-2xl overflow-hidden text-white">
-            <div className="relative z-10">
+            <div className="relative">
                 <div className="flex justify-between items-start mb-8">
                     <div>
                         <h2 className="text-3xl font-medium text-white">Profile Details</h2>
