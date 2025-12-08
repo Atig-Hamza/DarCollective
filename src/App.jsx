@@ -8,6 +8,7 @@ import NotFound from './pages/404.jsx'
 import AuthMiddleware from './middleware/authMiddleware.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import ProfilePage from './pages/Profile.jsx'
+import Groups from './pages/Groups.jsx'
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/dashboard" element={<AuthMiddleware><Dashboard/></AuthMiddleware>} />
       <Route path="/tirelire" element={<AuthMiddleware><Tirelire/></AuthMiddleware>} />
+      <Route path="/groups" element={<AuthMiddleware><Groups view="list"/></AuthMiddleware>} />
+      <Route path="/groups/create" element={<AuthMiddleware><Groups view="create"/></AuthMiddleware>} />
+      <Route path="/groups/join" element={<AuthMiddleware><Groups view="list"/></AuthMiddleware>} />
       <Route path="/profile" element={<AuthMiddleware><ProfilePage/></AuthMiddleware>} />
       <Route path="login" element={<Login/>}/>
       <Route path="/signup" element={<Signup/>} />
